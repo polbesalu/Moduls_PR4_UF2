@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="action_zoo_zoo">
+			<field name="name">Accio zoo</field>
+			<field name="res_model">zoo.zoo</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_zoo_animal">
+			<field name="name">Accio animal</field>
+			<field name="res_model">zoo.animal</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_zoo_especie">
+			<field name="name">Accio especie</field>
+			<field name="res_model">zoo.especie</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<menuitem name="Zoo" id="zoo_menu" />
+		<menuitem name="Zoo" parent="zoo_menu" id="zoo_menu_zoo" action="action_zoo_zoo" />
+		<menuitem name="Animal" parent="zoo_menu" id="zoo_menu_animal" action="action_zoo_animal" />
+		<menuitem name="Especie" parent="zoo_menu" id="zoo_menu_animal" action="action_zoo_especie" />
+
+
+		<record model="ir.ui.view" id="view_zoo_zoo_tree">
+			<field name="name">view_zoo_zoo_tree</field>
+			<field name="model">zoo.zoo</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Zoo">
+					<field name="Id" />
+					<field name="Nom" />
+					<field name="Ciutat" />
+					<field name="Pais" />
+					<field name="Grandaria" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_zoo_animal_tree">
+			<field name="name">view_zoo_animal_tree</field>
+			<field name="model">zoo.animal</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Animal">
+					<field name="Id" />
+					<field name="Sexe" />
+					<field name="DataNaix" />
+					<field name="ContinentOrigen" />
+					<field name="PaisOrigen" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_zoo_especie_tree">
+			<field name="name">view_zoo_especie_tree</field>
+			<field name="model">zoo.especie</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Especie">
+					<field name="Id" />
+					<field name="Familia" />
+					<field name="NomVulgar" />
+					<field name="NomCientific" />
+					<field name="Perill" />
+				</tree>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="view_zoo_zoo_form">
+            <field name="name">view_zoo_zoo_form</field>
+            <field name="model">zoo.zoo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Zoo">
+                    <sheet>
+                        <group col="12" string="Info Zoo">
+                            <field name="Id"/>
+                            <field name="Nom"/>
+                            <field name="Ciutat"/>
+                            <field name="Pais"/>
+                            <field name="Grandaria"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_zoo_animal_form">
+            <field name="name">view_zoo_animal_form</field>
+            <field name="model">zoo.animal</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Animal">
+                    <sheet>
+                        <group col="12" string="Info Animal">
+                            <field name="Id"/>
+                            <field name="Sexe"/>
+                            <field name="DataNaix"/>
+                            <field name="ContinentOrigen"/>
+                            <field name="PaisOrigen"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_zoo_especie_form">
+            <field name="name">view_zoo_especie_form</field>
+            <field name="model">zoo.especie</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Especie">
+                    <sheet>
+                        <group col="12" string="Info Especie">
+                            <field name="Id"/>
+                            <field name="Familia"/>
+                            <field name="NomVulgar"/>
+                            <field name="NomCientific"/>
+                            <field name="Perill"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+	</data>
+</odoo>
