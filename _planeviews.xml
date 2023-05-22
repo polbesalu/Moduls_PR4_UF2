@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.actions.act_window" id="action_plane_menu_aeroport">
+			<field name="name">Accio Aeroport</field>
+			<field name="res_model">plane.aeroport</field>
+			<field name="view_mode">tree</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_plane_menu_vols">
+			<field name="name">Accio Vols</field>
+			<field name="res_model">plane.vols</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_plane_menu_avio">
+			<field name="name">Accio Avio</field>
+			<field name="res_model">plane.avio</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_plane_menu_pilot">
+			<field name="name">Accio Pilot</field>
+			<field name="res_model">plane.pilot</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<menuitem name="Plane" id="plane_menu" />
+		<menuitem name="Aeroport" parent="plane_menu" id="plane_menu_aeroport" action="action_plane_menu_aeroport" />
+		<menuitem name="Vols" parent="plane_menu" id="plane_menu_vols" action="action_plane_menu_vols" />
+		<menuitem name="Avió" parent="plane_menu" id="plane_menu_avio" action="action_plane_menu_avio" />
+		<menuitem name="Pilot" parent="plane_menu" id="plane_menu_pilot" action="action_plane_menu_pilot" />
+
+
+
+		<record model="ir.ui.view" id="view_plane_menu_aeroport_tree">
+			<field name="name">view_plane_menu_tree</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Aeroport">
+					<field name="codi" />
+					<field name="nom" />
+					<field name="imatge" />
+					<field name="ciutat" />
+					<field name="pais" />
+					<field name="latitud" />
+					<field name="longitud" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="view_plane_menu_vols_tree">
+			<field name="name">view_plane_menu_tree</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Vols">
+					<field name="codi" />
+					<field name="passatgers" />
+					<field name="dataSortida" />
+					<field name="dataArrivada" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_avio_tree">
+			<field name="name">view_plane_menu_tree</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Aeroport">
+					<field name="codi" />
+					<field name="imatge" />
+					<field name="marca" />
+					<field name="model" />
+					<field name="maxVel" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_Pilot_tree">
+			<field name="name">view_plane_menu_tree</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Aeroport">
+					<field name="codi" />
+					<field name="nom" />
+					<field name="cognoms" />
+					<field name="nif" />
+					<field name="telf" />
+					<field name="email" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_aeroport_form">
+			<field name="name">view_plane_menu_form</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Aeroport">
+					<sheet>
+						<group col="12" string="Dades Aeroport">
+							<group colspan="1">
+								<field name="imatge"/>
+							</group>
+							<group colspan="11">
+								<field name="codi"/>
+								<field name="nom"/>
+								<field name="ciutat"/>
+								<field name="pais"/>
+								<field name="latitud"/>
+								<field name="longitud"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_vols_form">
+			<field name="name">view_plane_menu_form</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Vols">
+					<sheet>
+						<group col="12" string="Info del Vol">
+							<field name="codi"/>
+							<field name="passatgers"/>
+							<field name="dataSortida"/>
+							<field name="dataArrivada"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_avio_form">
+			<field name="name">view_plane_menu_form</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Aeroport">
+					<sheet>
+						<group col="12" string="Aeroport">
+							<field name="codi"/>
+							<field name="imatge"/>
+							<field name="marca"/>
+							<field name="model"/>
+							<field name="maxVel"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_plane_menu_pilot_form">
+			<field name="name">view_plane_menu_form</field>
+			<field name="model">plane.aeroport</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Aeroport">
+					<sheet>
+						<group col="12" string="Aeroport">
+							<field name="codi"/>
+							<field name="nom"/>
+							<field name="cognoms"/>
+							<field name="nif"/>
+							<field name="telf"/>
+							<field name="email"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>
